@@ -137,7 +137,7 @@ const nums = [100, 5, 23, 15, 21, 72, 9, 45, 66, 7, 81, 90];
 
 // Complete Exercise 11 below...
 
-let odds = [];
+const odds = [];
 nums.forEach(iterate);
 
 function iterate (items){
@@ -158,9 +158,9 @@ Exercise 12:
 
 // Complete Exercise 12 below...
 
-let fizz = [];
-let buzz = [];
-let fizzbuzz = [];
+const fizz = [];
+const buzz = [];
+const fizzbuzz = [];
 
 nums.forEach(by3);
 nums.forEach(by5);
@@ -228,17 +228,14 @@ Exercise 15:
 // Complete Exercise 15 below...
 
 
-const total = [];
+let total = 0;
 let sum = 0;
-numArrays.forEach(sumOfArray);
 
-function sumOfArray (numbers){
-    for (let i = 0; i < numArrays.length; i++){
-       for (let j = 0; j < numArrays[i].length; j++){
-           sum += numArrays[i][j];
-        }
-    }
-    total.push(sum);
-}
+numArrays.forEach((number)=>{
+    number.forEach((value)=>{ 
+        sum += value;
+    })
+    total = sum;
+})
 
 console.log('Exercise 15 Result: ', total)
