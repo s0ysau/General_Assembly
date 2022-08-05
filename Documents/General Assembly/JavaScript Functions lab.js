@@ -61,15 +61,11 @@ console.log(multiplyArray([2,4,5]));
 
 //6. Define a function, as a function expression, numArgs that returns the number of arguments passed to the function when called.
 
-numArgs = (num) => {
-    let number = 0 
-    for (let i = 0; i < arguments.length; i++){
-        number += number(arguments[i]);
-    }
-    return number;
+numArgs = () => {
+    return arguments.length;
 }
-
-console.log(numArgs('hi', 'bye', 'another one', 'two times'))
+//console.log(numArgs("Tatoonie", "Asgard", "Titan", 7));
+console.log(numArgs());
 
 //7. Define a function, as a function declaration, reverseString that takes a string, reverses the characters, and returns it. For example, reverseString('rockstar'); would return the string "ratskcor".
 //HINT: array.reverse() ... Turn string to array, reverse then back into a string.
@@ -79,9 +75,7 @@ function reverseString (string) {
     let convertToArray = input.split('');
     let reverseArray = convertToArray.reverse();
     let backToString = reverseArray.toString();
-
-    //https://thispointer.com/remove-comma-from-string-in-javascript/
-    let stringWithoutCommas = backToString.replace(/,/g,'');
+    let stringWithoutCommas = backToString.replace(/,/g,''); // https://thispointer.com/remove-comma-from-string-in-javascript/
     console.log(stringWithoutCommas);
 }
 
@@ -103,7 +97,7 @@ longestStringInArray = (arr) => {
     return initialLongestString;
 }
 
-console.log(longestStringInArray (['hello', 'to', 'all', 'the', 'worlds']));
+console.log(longestStringInArray (['hello', 'Alderaan']));
 
 //9 .Define a function, as a function declaration, stringsLongerThan that takes an array of strings and a number as arguments; and returns an array of the strings that are longer than the number passed in. 
 //For example, stringsLongerThan (['say', 'hello', 'in', 'the', 'morning'], 3); would return ["hello", "morning"]. 
@@ -121,4 +115,4 @@ function stringsLongerThan (arr, num) {
     return longStrings
 }
 
-console.log(stringsLongerThan(['hello', 'world', 'its', 'a', 'great', 'day'], 4));
+console.log(stringsLongerThan(['Greetings', 'world', 'its', 'a', 'great', 'day', 'on', 'earth 616'], 6));
