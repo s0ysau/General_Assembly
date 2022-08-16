@@ -16,42 +16,46 @@ topMenuEl.style.backgroundColor = 'var(--top-menu-bg)'
 topMenuEl.classList.add('flex-around');
 //Task 3.0
 const menuLinks = [
-    {text: 'about', href: '/about'},
-    {text: 'catalog', href: '/catalog'},
-    {text: 'orders', href: '/orders'},
-    {text: 'account', href: '/account'},
-  ];
-
-//   newAEl.setAttribute("href", "");
-//   newAEl.textContent = "Hello World";
-
-const newAEl = document.createElement('a');
-    menuLinks.forEach((menu) => {
-    // const newAEl = document.createElement('a');
+  {text: 'about', href: '/about'},
+  {text: 'catalog', href: '#', subLinks: [
+    {text: 'all', href: '/catalog/all'},
+    {text: 'top selling', href: '/catalog/top'},
+    {text: 'search', href: '/catalog/search'},
+  ]},
+  {text: 'orders', href: '#' , subLinks: [
+    {text: 'new', href: '/orders/new'},
+    {text: 'pending', href: '/orders/pending'},
+    {text: 'history', href: '/orders/history'},
+  ]},
+  {text: 'account', href: '#', subLinks: [
+    {text: 'profile', href: '/account/profile'},
+    {text: 'sign out', href: '/account/signout'},
+  ]},
+];
+//Task 3.1
+menuLinks.forEach((menu) => {
+    let newAEl = document.createElement('a');
     newAEl.textContent = menu.text;
     newAEl.setAttribute("href", menu.href);
-    console.log(newAEl)
+    topMenuEl.append(newAEl);
   });
-
-// for (let i = 0; i < menuLinks.length; i++){
-//     for (let j = 0; j < menuLinks[j].length; j++){
-//         newAEl.textContent = menu[i].text;
-//         newAEl.setAttribute("href", menu[j].href);
-//         document.querySelector('a').innerHTML = newAEl;
-//     }
-// }
-
-console.log(newAEl);
-
-// menuLinks.forEach((menu) => {
-//     const newAEl = document.createElement('a');
-//     newAEl.setAttribute("href", menuLinks.href);
-//     newAEl.textContent = menuLinks.text;
-//     newAEl.innerHTML = menu;
-//     document.body.appendChild(newAEl)
-// })
-
-
-
-topMenuEl.append(newAEl)
+//Task 4.0
+const subMenuEl = document.getElementById('sub-menu');
+//Task 4.1
+subMenuEl.style.height = '100%';
+//Task 4.2
+subMenuEl.style.backgroundColor = 'var(--sub-menu-bg)';
+//Task 4.3
+subMenuEl.classList.add('flex-around');
+//Task 4.4
+subMenuEl.style.position = 'absolute';
+//Task 4.5
+subMenuEl.style.marginTop = 0;
+//Task 5.1
+const topMenuLinks = document.querySelectorAll('body > header > nav > a');
+showingSubMenu = false;
+// console.log(topMenuLinks);
+// console.log(showingSubMenu);
+//Task 5.2
+topMenuEl.addEventListener('click')
 
