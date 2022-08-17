@@ -1,0 +1,22 @@
+/*const faveFoods = ["pizza", "cheeseburger", "sushi"];
+
+console.log(faveFoods);
+console.log(faveFoods[1])
+
+const drSeussBooks = [
+    'Cat in the Hat',
+    'Green Eggs and Ham',
+    'Grinch',
+    'Thing One',
+    'Thing Two',
+    'Cindy Loo Who',
+    'JoJo McDodd'
+];
+
+console.log(drSeussBooks[0]);
+let third = drSeussBooks[2];
+console.log(third);
+console.log(drSeussBooks[drSeussBooks.length-1]);
+*/
+
+const shortArray = ['first', 'middle', 'last'];

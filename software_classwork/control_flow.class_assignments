@@ -1,0 +1,8 @@
+let height = prompt("Enter your height in inches ")
+
+
+if (height >= 48 ){
+    console.log("You can go on this ride. ");
+} else {
+    console.log("You are not tall enough to go on this ride. ");
+}

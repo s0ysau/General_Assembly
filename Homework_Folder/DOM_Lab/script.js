@@ -57,7 +57,7 @@ showingSubMenu = false;
 // console.log(topMenuLinks);
 // console.log(showingSubMenu);
 //Task 5.2
-topMenuEl.addEventListener('click', preventDefault(evt) => {
+topMenuEl.addEventListener('click', /*preventDefault*/(evt) => {
 
 });
 

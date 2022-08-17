@@ -1,0 +1,15 @@
+const printBoo = () => {
+    console.log('======')
+    console.log('Boo!')
+    console.log('======')
+}
+
+printBoo()
+
+const printTriangle = (num) => {
+    for (let i = 0; i < num; i++){
+        console.log('#'.repeat(i));
+    }
+}
+
+printTriangle(20);
