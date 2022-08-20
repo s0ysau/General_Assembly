@@ -7,7 +7,7 @@ mainEl.innerHTML = '<h1>SEI Rocks!</h1>';
 //Task 1.3
 mainEl.classList.add('flex-ctr');
 //Task 2.0
-const topMenuEl = document.querySelector('#top-menu');
+const topMenuEl = document.getElementById('top-menu');
 //Task 2.1
 topMenuEl.style.height = '100%';
 //Task 2.2
@@ -50,14 +50,83 @@ subMenuEl.classList.add('flex-around');
 //Task 4.4
 subMenuEl.style.position = 'absolute';
 //Task 4.5
-subMenuEl.style.marginTop = 0;
+subMenuEl.style.top = '0';
 //Task 5.1
-const topMenuLinks = document.querySelectorAll('body > header > nav > a');
-showingSubMenu = false;
-// console.log(topMenuLinks);
-// console.log(showingSubMenu);
+const topMenuLinks = topMenuEl.querySelectorAll('#top-menu a')
+let showingSubMenu = false;
+
 //Task 5.2
-topMenuEl.addEventListener('click', /*preventDefault*/(evt) => {
+topMenuEl.addEventListener('click', (evt) => { 
+  evt.preventDefault();
+  const evtTarget = evt.target;
+if (evtTarget.nodeName !== 'A'){
+  return
+}
 
+//Task 5.3 
+if (evtTarget.classList.contains('active')) {
+  evtTarget.classList.remove('active');
+  showingSubMenu = false;
+  subMenuEl.style.top = 0;
+  return;
+}
+
+//Task 5.4
+topMenuLinks.forEach((link) => {
+  link.classList.remove('active')
+//Task 5.5 
+  link.classList.add('active')  
+})
+
+//Task 5.6
+const linkObject = menuLinks.find((linkObj) => {
+  return linkObj.text === evtTarget.textContent;
+}); 
+showingSubMenu = 'subLinks' in linkObject;
+
+//Task 5.7 
+if (showingSubMenu === true){
+  buildSubMenu(linkObject.subLinks)
+  subMenuEl.style.top = '100%'
+} else {
+  subMenuEl.style.top = '0'
+}
+
+//Task 5.8
+ function buildSubMenu (subLinks){
+    subMenuEl.innerHTML = '';
+    subLinks.forEach((subLink) => {
+      let linkElement = document.createElement('a');
+      linkElement.setAttribute("href", subLink.href);
+      linkElement.textContent = subLink.text;
+      subMenuEl.append(linkElement);
+    });
+    }   
+ });
+
+//Task 6.0
+subMenuEl.addEventListener('click', (evt) => {
+  evt.preventDefault();
+  const evtTarget = evt.target;
+  if (evtTarget.nodeName !== 'A'){
+  return
+}
+console.log(evtTarget.textContent)
+
+//Task 6.1
+showingSubMenu = false;
+subMenuEl.style.top = '0';
+
+//Task 6.2
+topMenuLinks.forEach((link) => {
+  link.classList.remove('active')
+})
+
+//Task 6.3
+mainEl.innerHTML = `<h1>${evtTarget.textContent}</h1>`;
+
+//Task 6.4
+if (topMenuEl == 'about'){
+  mainEl.innerHTML = `<h1>${evtTarget.textContent}</h1>`;
+}
 });
-
