@@ -1,0 +1,30 @@
+body {
+    background-color: lavender;
+}
+
+h1 {
+    text-align: center;
+    color: blue;
+}
+
+div {
+    outline: 100px;
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: repeat(3, 25vw);
+    grid-gap: 20px 20px;
+}
+
+.square {
+    border: solid blue;
+    background-color: beige;
+    text-align: center;
+}
+
+.blue {
+    background-color: blue;
+}
+
+.red{
+    background-color: red;
+}
